@@ -69,24 +69,26 @@ nav {
     border: 1px solid #d6eaf8;
     text-align: center;
   }
-
   section#productos li {
-    background-color: #eaf2f8;
+    background-color: #000000; /* Fondo negro */
+    color: #ffffff;            /* Texto blanco */
     padding: 15px;
     border-radius: 8px;
-    border: 1px solid #d6eaf8;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid #444;
+    box-shadow: 0 2px 5px rgba(255,255,255,0.1);
   }
   
   
-section#productos h3 {
-    margin-bottom: 10px;
-    font-size: 1.4em;
-    color: #2c3e50;
+  section#productos h3 {
+  color: #ffffff;
+  }
+
+  section#productos p {
+  color: #dddddd;
   }
   
   section#productos li:nth-child(2) {
-    background-color: #fcf3cf;
+    background-color: #010101;
   }
   
   footer a:hover {
@@ -100,3 +102,62 @@ section#productos h3 {
     border-radius: 5px;
   }
   
+  .btn-carrito {
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-carrito:hover {
+  background-color: #1c5980;
+}
+
+section#contacto {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+section#contacto h2 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+form label {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.btn-enviar {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+  background-color: #1e8449;
+}
