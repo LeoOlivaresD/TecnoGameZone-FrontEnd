@@ -181,6 +181,8 @@ form textarea {
 
 /* Footer */
 footer {
+  margin-top: 70px;
+  padding: 15px;
   text-align: center;
   font-size: 0.9em;
   background-color: #1f1f3d;
