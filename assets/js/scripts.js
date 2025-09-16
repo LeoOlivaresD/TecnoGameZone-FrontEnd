@@ -1,43 +1,47 @@
 document.addEventListener("DOMContentLoaded", () => {
+// Elementos del carrito
   const panelCarrito = document.getElementById("panel-carrito") || document.getElementById("carrito");
   const listaCarrito = document.getElementById("lista-carrito");
   const totalCarrito = document.getElementById("total-carrito");
   const subtotalCarrito = document.getElementById("subtotal-carrito");
   const impuestosCarrito = document.getElementById("impuestos-carrito");
+  // Badge del carrito en el botón flotante
   const badge = document.getElementById("carrito-badge");
-
+   
+  // Botones abrir/cerrar carrito/ vaciar carrito
   const btnAbrir = document.getElementById("abrir-carrito");
   const btnCerrar = document.getElementById("cerrar-carrito");
   const btnVaciar = document.getElementById("vaciar-carrito");
 
+// Cargar carrito desde localStorage
   let carritoItems = JSON.parse(localStorage.getItem("carrito")) || [];
-
+// Función para renderizar el carrito
   function renderizarCarrito() {
     if (!listaCarrito) return;
-
+// Limpiar lista
     listaCarrito.innerHTML = "";
     let subtotal = 0;
-
+// Renderizar cada item
     carritoItems.forEach((item, index) => {
       const li = document.createElement("li");
       li.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
       li.textContent = `${item.titulo} - $${item.precio.toLocaleString()} CLP`;
-
+// Botón eliminar
       const btnEliminar = document.createElement("button");
       btnEliminar.textContent = "❌";
       btnEliminar.classList.add("btn", "btn-sm", "btn-danger", "ms-2");
-
+// Eliminar item al hacer click
       btnEliminar.addEventListener("click", () => {
         carritoItems.splice(index, 1);
+        // Actualizar localStorage
         localStorage.setItem("carrito", JSON.stringify(carritoItems));
         renderizarCarrito();
       });
-
       li.appendChild(btnEliminar);
       listaCarrito.appendChild(li);
       subtotal += item.precio;
     });
-
+    // Calcular impuestos y total
     const iva = Math.round(subtotal * 0.19);
     const total = subtotal + iva;
 
@@ -47,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (badge) badge.textContent = carritoItems.length;
   }
-
+  // Función para inicializar botones "Agregar al carrito"
   function inicializarBotonesAgregar() {
     const botones = document.querySelectorAll(".btn-agregar, .btn-primary");
     botones.forEach(boton => {
@@ -68,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-
+// Vaciar carrito
   if (btnVaciar) {
     btnVaciar.addEventListener("click", () => {
       const confirmar = confirm("¿Estás seguro de que quieres vaciar el carrito?");
@@ -80,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ✅ Toggle en botón flotante
+  // Toggle en botón flotante
   if (btnAbrir) {
     btnAbrir.addEventListener("click", () => {
       panelCarrito.classList.toggle("visible");
@@ -92,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
       panelCarrito.classList.remove("visible");
     });
   }
-
+// Toggle descripción
   const botonesDescripcion = document.querySelectorAll(".btn-descripcion");
   botonesDescripcion.forEach(boton => {
     boton.addEventListener("click", () => {
@@ -112,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderizarCarrito();
 
     // ==========================
-  // 🔎 Búsqueda de productos
+   // Búsqueda de productos
   // ==========================
   const formBusqueda = document.getElementById("form-busqueda");
   const inputBusqueda = document.getElementById("buscar");
@@ -151,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>`;
       return;
     }
-
+    // Mostrar resultados
     resultados.forEach(p => {
       contenedorResultados.innerHTML += `
         <div class="card mb-3">
@@ -212,7 +216,7 @@ function buscarProducto(query) {
       </div>`;
     return;
   }
-
+// Mostrar resultados
   resultados.forEach(p => {
     contenedorResultados.innerHTML += `
       <div class="card mb-3">
