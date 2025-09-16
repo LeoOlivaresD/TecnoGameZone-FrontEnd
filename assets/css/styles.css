@@ -22,7 +22,7 @@ body {
   margin: 0 auto;
 
   /* Espacio vertical para que el carrusel no quede pegado arriba */
-  padding-top: 20px;
+  padding-top: 10px;
 
   /* Evita expansión vertical */
   min-height: 100vh; /* ocupa exactamente el alto de la pantalla */
@@ -35,8 +35,8 @@ body {
    Cajas estructurales
 ======================= */
 header, nav, section#productos, footer {
-  margin: 10px;
-  padding: 10px;
+  margin: 2px;
+  padding: 2px;
   border-radius: 8px;
   border: 1px solid #333;
   background-color: #0a0a2a;
@@ -238,6 +238,11 @@ section#productos {
   padding: 2px 6px;
   border-radius: 50%;
   font-weight: bold;
+}
+
+#cerrar-busqueda {
+  position: relative;
+  z-index: 10;
 }
 
 /* =======================

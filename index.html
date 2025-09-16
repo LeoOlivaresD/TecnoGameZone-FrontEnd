@@ -21,7 +21,7 @@
       <p>Tu tienda favorita de videojuegos retro y actuales</p>
     </header>
     <!--Barra de busqueda-->
-    <form id="form-busqueda" class="d-flex my-3">
+    <form id="form-busqueda" class="d-flex">
       <input
         id="buscar"
         class="form-control me-2"
@@ -30,6 +30,16 @@
       />
       <button class="btn btn-outline-success" type="submit">Buscar</button>
     </form>
+
+    <button
+      id="cerrar-busqueda"
+      class="btn btn-outline-danger mb-2"
+      style="display: none"
+    >
+      ✖ Cerrar búsqueda
+    </button>
+
+    <div id="resultado-busqueda" class="container mt-4"></div>
     <!--Boton Carrito flotante-->
     <button id="abrir-carrito" class="btn-carrito-flotante">
       🛒 <span id="carrito-badge" class="badge-carrito">0</span>

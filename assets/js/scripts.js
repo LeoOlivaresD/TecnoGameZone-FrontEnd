@@ -110,4 +110,151 @@ document.addEventListener("DOMContentLoaded", () => {
 
   inicializarBotonesAgregar();
   renderizarCarrito();
+
+    // ==========================
+  // 🔎 Búsqueda de productos
+  // ==========================
+  const formBusqueda = document.getElementById("form-busqueda");
+  const inputBusqueda = document.getElementById("buscar");
+  const contenedorResultados = document.getElementById("resultado-busqueda");
+
+  let productosData = [];
+
+  // Cargar productos desde el JSON local
+  async function cargarProductosJSON() {
+    try {
+      const res = await fetch("assets/data/data.json");
+      if (!res.ok) throw new Error("Error al cargar productos");
+      productosData = await res.json();
+    } catch (err) {
+      console.error("❌ Error cargando JSON:", err);
+      if (contenedorResultados) {
+        contenedorResultados.innerHTML = `<p class="text-danger">⚠️ No se pudieron cargar los productos.</p>`;
+      }
+    }
+  }
+
+  // Buscar productos en el JSON
+  function buscarProducto(query) {
+    const resultados = productosData.filter(p =>
+      p.titulo.toLowerCase().includes(query.toLowerCase())
+    );
+
+    if (!contenedorResultados) return;
+
+    contenedorResultados.innerHTML = "";
+
+    if (resultados.length === 0) {
+      contenedorResultados.innerHTML = `
+        <div class="alert alert-warning">
+          ⚠️ No se encontró ningún producto con el nombre "${query}".
+        </div>`;
+      return;
+    }
+
+    resultados.forEach(p => {
+      contenedorResultados.innerHTML += `
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="${p.imagen}" class="img-fluid rounded-start" alt="${p.titulo}">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">${p.titulo}</h5>
+                <p class="card-text">${p.descripcion}</p>
+                <p><strong>Precio:</strong> $${p.precio.toLocaleString()} ${p.moneda}</p>
+                <button class="btn btn-primary btn-agregar">Agregar al carrito</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
+    // reactivar botones "Agregar al carrito" en los resultados
+    inicializarBotonesAgregar();
+  }
+
+  // Evento submit de búsqueda
+  if (formBusqueda) {
+    formBusqueda.addEventListener("submit", e => {
+      e.preventDefault();
+      const query = inputBusqueda.value.trim();
+      if (query.length === 0) {
+        contenedorResultados.innerHTML = `<div class="alert alert-info">Por favor escribe algo para buscar.</div>`;
+        return;
+      }
+      buscarProducto(query);
+    });
+  }
+
+  // Cargar productos al iniciar
+  cargarProductosJSON();
+
+  const btnCerrarBusqueda = document.getElementById("cerrar-busqueda");
+
+// Mostrar botón al buscar
+function buscarProducto(query) {
+  const resultados = productosData.filter(p =>
+    p.titulo.toLowerCase().includes(query.toLowerCase())
+  );
+
+  if (!contenedorResultados) return;
+
+  contenedorResultados.innerHTML = "";
+  btnCerrarBusqueda.style.display = "inline-block";
+
+  if (resultados.length === 0) {
+    contenedorResultados.innerHTML = `
+      <div class="alert alert-warning">
+        ⚠️ No se encontró ningún producto con el nombre "${query}".
+      </div>`;
+    return;
+  }
+
+  resultados.forEach(p => {
+    contenedorResultados.innerHTML += `
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="${p.imagen}" class="img-fluid rounded-start" alt="${p.titulo}">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">${p.titulo}</h5>
+              <p class="card-text">${p.descripcion}</p>
+              <p><strong>Precio:</strong> $${p.precio.toLocaleString()} ${p.moneda}</p>
+              <button class="btn btn-primary btn-agregar">Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+
+  inicializarBotonesAgregar();
+}
+
+// Cerrar resultados al presionar el botón
+if (btnCerrarBusqueda) {
+  btnCerrarBusqueda.addEventListener("click", () => {
+    contenedorResultados.innerHTML = "";
+    btnCerrarBusqueda.style.display = "none";
+  });
+}
+
+// Cerrar resultados al hacer clic fuera del área
+document.addEventListener("click", e => {
+  const dentroDeResultados = contenedorResultados.contains(e.target);
+  const dentroDelFormulario = formBusqueda.contains(e.target);
+  const dentroDelBoton = btnCerrarBusqueda.contains(e.target);
+
+  if (!dentroDeResultados && !dentroDelFormulario && !dentroDelBoton) {
+    contenedorResultados.innerHTML = "";
+    btnCerrarBusqueda.style.display = "none";
+  }
+});
+
+
 });
