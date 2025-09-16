@@ -41,6 +41,13 @@ header, nav, section#productos, footer {
   border: 1px solid #333;
   background-color: #0a0a2a;
 }
+form#form-busqueda {
+  margin-bottom: 0; /* elimina espacio debajo de la barra de búsqueda */
+}
+
+nav.navbar {
+  margin-top: 0px;
+}
 
 /* Encabezado */
 header h1 {

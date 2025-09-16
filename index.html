@@ -19,34 +19,26 @@
     <header>
       <h1>TecnoGameZone</h1>
       <p>Tu tienda favorita de videojuegos retro y actuales</p>
+
+      <!-- Barra de busqueda dentro del header -->
+      <form id="form-busqueda" class="d-flex justify-content-center mt-2">
+        <input
+          id="buscar"
+          class="form-control me-2"
+          type="search"
+          placeholder="Buscar producto..."
+        />
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
+
+      <button
+        id="cerrar-busqueda"
+        class="btn btn-outline-danger mt-2"
+        style="display: none"
+      >
+        ✖ Cerrar búsqueda
+      </button>
     </header>
-    <!--Barra de busqueda-->
-    <form id="form-busqueda" class="d-flex">
-      <input
-        id="buscar"
-        class="form-control me-2"
-        type="search"
-        placeholder="Buscar producto..."
-      />
-      <button class="btn btn-outline-success" type="submit">Buscar</button>
-    </form>
-
-    <button
-      id="cerrar-busqueda"
-      class="btn btn-outline-danger mb-2"
-      style="display: none"
-    >
-      ✖ Cerrar búsqueda
-    </button>
-
-    <div id="resultado-busqueda" class="container mt-4"></div>
-    <!--Boton Carrito flotante-->
-    <button id="abrir-carrito" class="btn-carrito-flotante">
-      🛒 <span id="carrito-badge" class="badge-carrito">0</span>
-    </button>
-    <div class="container mt-4">
-      <div class="row" id="productos"></div>
-    </div>
 
     <!-- Menú de navegación Bootstrap -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -83,10 +75,16 @@
         </div>
       </div>
     </nav>
-    <!-- Sección principal de productos -->
+
+    <!-- Contenido principal -->
+    <div class="container mt-4">
+      <div id="resultado-busqueda"></div>
+      <div class="row" id="productos"></div>
+    </div>
+
+    <!-- Sección de productos destacados con carrusel -->
     <section id="productosDestacados">
       <h2>Productos destacados</h2>
-      <!-- Carrusel de productos destacados -->
       <div
         id="carouselProductos"
         class="carousel slide mb-4"
@@ -128,8 +126,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Controles del carrusel -->
         <button
           class="carousel-control-prev"
           type="button"
@@ -150,6 +146,7 @@
         </button>
       </div>
     </section>
+
     <!-- Pie de página -->
     <footer class="footer-flex">
       <div>© 2025 TecnoGameZone</div>
@@ -162,6 +159,7 @@
       </div>
       <div>Dirección: Av. Gamer 123, Santiago, Chile</div>
     </footer>
+
     <!-- Carrito lateral -->
     <div id="panel-carrito" class="carrito">
       <h3>🛒 Carrito</h3>
@@ -174,6 +172,11 @@
       </button>
       <button id="cerrar-carrito" class="btn btn-secondary mt-2">Cerrar</button>
     </div>
+
+    <!-- Botón Carrito flotante -->
+    <button id="abrir-carrito" class="btn-carrito-flotante">
+      🛒 <span id="carrito-badge" class="badge-carrito">0</span>
+    </button>
 
     <script src="assets/js/scripts.js"></script>
   </body>
