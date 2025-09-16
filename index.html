@@ -20,6 +20,23 @@
       <h1>TecnoGameZone</h1>
       <p>Tu tienda favorita de videojuegos retro y actuales</p>
     </header>
+    <!--Barra de busqueda-->
+    <form id="form-busqueda" class="d-flex my-3">
+      <input
+        id="buscar"
+        class="form-control me-2"
+        type="search"
+        placeholder="Buscar producto..."
+      />
+      <button class="btn btn-outline-success" type="submit">Buscar</button>
+    </form>
+    <!--Boton Carrito flotante-->
+    <button id="abrir-carrito" class="btn-carrito-flotante">
+      🛒 <span id="carrito-badge" class="badge-carrito">0</span>
+    </button>
+    <div class="container mt-4">
+      <div class="row" id="productos"></div>
+    </div>
 
     <!-- Menú de navegación Bootstrap -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -69,7 +86,7 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img
-              src="resources/img/clair-obscur-expedition-33-HD-scaled.jpg"
+              src="assets/img/clair-obscur-expedition-33-HD-scaled.jpg"
               class="d-block w-100"
               alt="Clair Obscure Expedition 33"
             />
@@ -80,7 +97,7 @@
           </div>
           <div class="carousel-item">
             <img
-              src="resources/img/horizon.jpg"
+              src="assets/img/horizon.jpg"
               class="d-block w-100"
               alt="Horizon Zero Dawn"
             />
@@ -91,7 +108,7 @@
           </div>
           <div class="carousel-item">
             <img
-              src="resources/img/Devil-May-Cry 5.jpg"
+              src="assets/img/Devil-May-Cry 5.jpg"
               class="d-block w-100"
               alt="Devil May Cry 5"
             />
@@ -135,5 +152,19 @@
       </div>
       <div>Dirección: Av. Gamer 123, Santiago, Chile</div>
     </footer>
+    <!-- Carrito lateral -->
+    <div id="panel-carrito" class="carrito">
+      <h3>🛒 Carrito</h3>
+      <ul id="lista-carrito" class="list-group"></ul>
+      <p id="subtotal-carrito"><strong>Subtotal:</strong> $0 CLP</p>
+      <p id="impuestos-carrito"><strong>Impuestos (IVA 19%):</strong> $0 CLP</p>
+      <p id="total-carrito"><strong>Total:</strong> $0 CLP</p>
+      <button id="vaciar-carrito" class="btn btn-danger mt-2">
+        Vaciar carrito
+      </button>
+      <button id="cerrar-carrito" class="btn btn-secondary mt-2">Cerrar</button>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
   </body>
 </html>

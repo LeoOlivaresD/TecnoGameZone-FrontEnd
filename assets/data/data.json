@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "titulo": "Clair Obscure Expedition 33",
+    "descripcion": "Innovador RPG por turnos con mecánicas únicas en tiempo real, ambientado en la Belle Époque.",
+    "precio": 39990,
+    "moneda": "CLP",
+    "imagen": "assets/img/clair-obscur-expedition-33-HD-scaled.jpg"
+  },
+  {
+    "id": 2,
+    "titulo": "Horizon Zero Dawn",
+    "descripcion": "Mundo postapocalíptico dominado por máquinas robóticas. Acción y exploración en estado puro.",
+    "precio": 29990,
+    "moneda": "CLP",
+    "imagen": "assets/img/horizon.jpg"
+  },
+  {
+    "id": 3,
+    "titulo": "Devil May Cry 5",
+    "descripcion": "El cazademonios definitivo regresa con combates frenéticos y estilo visual impactante.",
+    "precio": 34990,
+    "moneda": "CLP",
+    "imagen": "assets/img/Devil-May-Cry 5.jpg"
+  },
+  {
+    "id": 4,
+    "titulo": "Cyberpunk 2077",
+    "descripcion": "Explora Night City como un mercenario ciberpunk en un mundo abierto lleno de decisiones y caos tecnológico.",
+    "precio": 44990,
+    "moneda": "CLP",
+    "imagen": "assets/img/Cyberpunk-Orion.jpg"
+  },
+  {
+    "id": 5,
+    "titulo": "Nier Automata",
+    "descripcion": "Una historia filosófica y emocional protagonizada por androides en un mundo postapocalíptico lleno de acción.",
+    "precio": 39990,
+    "moneda": "CLP",
+    "imagen": "assets/img/nier automata.jpg"
+  },
+  {
+    "id": 6,
+    "titulo": "Metal Gear Rising: Revengeance",
+    "descripcion": "Acción frenética con espadas y cibercombate en un spin-off explosivo de la saga Metal Gear.",
+    "precio": 29990,
+    "moneda": "CLP",
+    "imagen": "assets/img/metal gear.jfif"
+  },
+  {
+    "id": 7,
+    "titulo": "God of War",
+    "descripcion": "Kratos y su hijo Atreus enfrentan dioses nórdicos en una épica aventura de redención y combate brutal.",
+    "precio": 25990,
+    "moneda": "CLP",
+    "imagen": "assets/img/gow.jpg"
+  },
+  {
+    "id": 8,
+    "titulo": "Spider-Man Remastered",
+    "descripcion": "Vuela por Nueva York con acrobacias espectaculares y combate dinámico en esta versión mejorada del clásico de Marvel.",
+    "precio": 49990,
+    "moneda": "CLP",
+    "imagen": "assets/img/spiderman.jfif"
+  },
+  {
+    "id": 9,
+    "titulo": "Warhammer 40,000: Space Marine 2",
+    "descripcion": "Enfrenta hordas alienígenas como un Marine Espacial en esta brutal y épica guerra intergaláctica.",
+    "precio": 74990,
+    "moneda": "CLP",
+    "imagen": "assets/img/spacemarine.jfif"
+  },
+  {
+    "id": 10,
+    "titulo": "Black Myth: Wukong",
+    "descripcion": "Embárcate en una épica aventura inspirada en la leyenda del Rey Mono, con combates fluidos, criaturas mitológicas y un mundo visualmente impactante.",
+    "precio": 74990,
+    "moneda": "CLP",
+    "imagen": "assets/img/Blackg.jpg"
+  }
+]
+

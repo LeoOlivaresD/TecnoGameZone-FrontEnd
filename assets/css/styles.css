@@ -76,6 +76,9 @@ section#productos {
 
 /* ====== Cards de productos ====== */
 .card {
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
   background-color: #1e1e1e;
   color: #f5f5f5;
   border: none;
@@ -108,6 +111,133 @@ section#productos {
 
 .btn-primary:hover {
   background-color: #1c5980;
+}
+
+.btn-secondary {
+  background-color: #7f8c8d;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #5d6d70;
+}
+
+
+/* ====== Carrito lateral ====== */
+.carrito {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 20px;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease;
+  z-index: 999;
+  overflow-y: auto;
+}
+
+.carrito.visible {
+  right: 0;
+}
+
+.carrito h3 {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #7f8c8d;
+  padding-bottom: 10px;
+}
+
+#lista-carrito li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.btn-cerrar-carrito {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #ecf0f1;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 1000;
+}
+
+.btn-cerrar-carrito:hover {
+  color: #e74c3c;
+}
+
+#vaciar-carrito {
+  font-weight: bold;
+  padding: 6px 12px;
+  border: none;
+  background-color: #c0392b;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+#vaciar-carrito:hover {
+  background-color: #922b21;
+}
+
+/* Botón flotante */
+.btn-carrito-flotante {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #2980b9;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.btn-carrito-flotante:hover {
+  background-color: #1c5980;
+}
+
+/* Panel lateral del carrito */
+#panel-carrito {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 300px;
+  height: 100%;
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  overflow-y: auto;
+  transition: right 0.4s ease;
+  z-index: 999;
+}
+
+#panel-carrito.visible {
+  right: 0;
+}
+.badge-carrito {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #e74c3c;
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
 }
 
 /* =======================
